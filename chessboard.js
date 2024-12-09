@@ -9,7 +9,22 @@ for (let i = 0; i < height; i++) {
       board += " ";
     }
   }
-  board += "\n";
 }
-
+board += "\n";
 console.log(board);
+
+// let white = true;
+// for (let i = 0; i < height; i++) {
+//   for (let j = 0; j < width; j++) {
+//     if (white) {
+//       board += " ";
+//     } else {
+//       board += "#";
+//     }
+//     white = !white;
+//   }
+//   white = !white;
+//   board += "\n";
+// }
+
+// console.log(board);
