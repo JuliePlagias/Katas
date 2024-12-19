@@ -16,30 +16,27 @@ resetBtn.onclick = reset;
 entry.addEventListener("change", updateMaxScore);
 
 function updateMaxScore() {
+    reset();
     p.textContent = `Playing to : ${entry.value}`;
 }
 
 function updateP1() {
-    if (p1Score >= entry.value) {
-        h1.firstChild.style.color = "green";
-        updateScore();
-        return;
-    }
-    p1Score++;
-    updateScore();
+    updateScore(1, 0);
 }
 
 function updateP2() {
-    if (p2Score >= entry.value) {
-        h1.lastChild.style.color = "green";
-        updateScore();
-        return;
-    }
-    p2Score++;
-    updateScore();
+    updateScore(0, 1);
 }
 
-function updateScore() {
+function updateScore(p1, p2) {
+
+    if(p1Score>=entry.value || p2Score>=entry.value)return;
+    p1Score+=p1;
+    if (p1Score >= entry.value) {
+        h1.firstChild.style.color = "green";}
+    p2Score+=p2;
+    if (p2Score >= entry.value) {
+        h1.lastChild.style.color = "green";}
 
     h1.firstChild.textContent = `${p1Score}`
     h1.lastChild.textContent = `${p2Score}`;
@@ -48,7 +45,8 @@ function updateScore() {
 function reset() {
     p1Score = 0;
     p2Score = 0;
-    updateScore();
+    h1.firstChild.textContent = `${p1Score}`
+    h1.lastChild.textContent = `${p2Score}`;
     changeColor([h1.firstChild, h1.lastChild], "black");
 }
 
