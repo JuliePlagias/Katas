@@ -30,13 +30,15 @@ function updateP2() {
 
 function updateScore(p1, p2) {
 
-    if(p1Score>=entry.value || p2Score>=entry.value)return;
-    p1Score+=p1;
+    if (p1Score >= entry.value || p2Score >= entry.value) return;
+    p1Score += p1;
     if (p1Score >= entry.value) {
-        h1.firstChild.style.color = "green";}
-    p2Score+=p2;
+        h1.firstChild.style.color = "green";
+    }
+    p2Score += p2;
     if (p2Score >= entry.value) {
-        h1.lastChild.style.color = "green";}
+        h1.lastChild.style.color = "green";
+    }
 
     h1.firstChild.textContent = `${p1Score}`
     h1.lastChild.textContent = `${p2Score}`;

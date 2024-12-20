@@ -1,0 +1,12 @@
+div {
+    display: flex;
+    justify-content: center;
+}
+
+.liste {
+    display: block;
+}
+
+input {
+    padding: 10px;
+}
